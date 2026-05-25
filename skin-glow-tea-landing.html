@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="True Nirvana Skin Glow Tea, a 100% natural herbal infusion of hibiscus, rose, butterfly pea & moringa. Sip your way to clear, radiant skin in 14 days." />
+<title>Skin Glow Tea | Sip Your Way to Radiant Skin in 14 Days | True Nirvana</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+:root {
+  --purple-900: #2D1B4E;        /* deepest plum (text) */
+  --purple-800: #3E1F6E;
+  --purple-700: #5B2A86;        /* primary */
+  --purple-600: #7A3FB5;        /* royal */
+  --purple-500: #9B6BD8;
+  --purple-300: #C9A8F0;
+  --purple-100: #E6D9F2;        /* soft lavender */
+  --purple-50:  #F4ECFB;
+  --cream:      #FBF7FF;
+  --white:      #FFFFFF;
+  --gold:       #D4A574;        /* premium accent */
+  --rose:       #F4C2D7;        /* soft pink complement */
+  --green:      #6BAF8D;        /* "natural" tick green */
+  --shadow-soft: 0 8px 24px rgba(91, 42, 134, 0.10);
+  --shadow-strong: 0 20px 50px rgba(91, 42, 134, 0.22);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --max-w: 1200px;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Inter', system-ui, -apple-system, sans-serif;
+  font-size:16px;
+  color:var(--purple-900);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family:'Playfair Display', Georgia, serif;
+  color:var(--purple-900);
+  line-height:1.15;
+  font-weight:700;
+}
+
+h1 { font-size:clamp(2.2rem, 5vw, 4rem); letter-spacing:-0.5px; }
+h2 { font-size:clamp(1.8rem, 4vw, 3rem); letter-spacing:-0.3px; }
+h3 { font-size:clamp(1.25rem, 2.4vw, 1.6rem); }
+
+p  { color:#4A3A6B; }
+
+img { max-width:100%; display:block; }
+
+a  { color:inherit; text-decoration:none; }
+
+.container {
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* CTA button */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:16px 32px;
+  background:linear-gradient(135deg, var(--purple-700) 0%, var(--purple-600) 100%);
+  color:#fff !important;
+  font-family:'Inter', sans-serif;
+  font-weight:700;
+  font-size:1rem;
+  letter-spacing:.3px;
+  border:0;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(91,42,134,.35);
+  transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  text-transform:uppercase;
+}
+.btn:hover { transform:translateY(-2px); box-shadow:0 14px 30px rgba(91,42,134,.45); filter:brightness(1.05);}
+.btn:active{ transform:translateY(0); }
+.btn-lg { padding:20px 44px; font-size:1.05rem; }
+.btn-outline {
+  background:transparent;
+  color:var(--purple-700) !important;
+  border:2px solid var(--purple-700);
+  box-shadow:none;
+}
+.btn-outline:hover { background:var(--purple-50); }
+
+/* =========================================================
+   ANNOUNCEMENT BAR
+   ========================================================= */
+.announce {
+  background:linear-gradient(90deg, var(--purple-800), var(--purple-600), var(--purple-800));
+  color:#fff;
+  font-size:.85rem;
+  font-weight:500;
+  padding:10px 16px;
+  overflow:hidden;
+  position:relative;
+}
+.announce-track {
+  display:flex;
+  gap:48px;
+  white-space:nowrap;
+  animation:scroll 28s linear infinite;
+}
+.announce-track span { display:inline-flex; align-items:center; gap:8px; }
+.announce-track .dot { color:var(--gold); }
+
+@keyframes scroll {
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--purple-100);
+}
+.nav-inner {
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.logo {
+  font-family:'Playfair Display', serif;
+  font-weight:700;
+  font-size:1.4rem;
+  color:var(--purple-700);
+  letter-spacing:.5px;
+}
+.logo small { font-size:.65rem; letter-spacing:3px; font-family:'Inter',sans-serif; font-weight:500; color:var(--purple-500); display:block; line-height:1; margin-top:2px;}
+.nav-links { display:flex; gap:26px; font-size:.92rem; font-weight:500; color:var(--purple-900);}
+.nav-links a:hover { color:var(--purple-700); }
+.nav-cta { display:flex; align-items:center; gap:14px; }
+.nav-cta .btn { padding:10px 22px; font-size:.85rem; }
+
+@media (max-width:768px){
+  .nav-links { display:none; }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position:relative;
+  background:
+    radial-gradient(circle at 80% 20%, var(--purple-100) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, var(--rose) 0%, transparent 40%),
+    linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  padding:60px 0 80px;
+  overflow:hidden;
+}
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.hero-eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--white);
+  border:1px solid var(--purple-100);
+  color:var(--purple-700);
+  padding:8px 16px;
+  border-radius:50px;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  box-shadow:var(--shadow-soft);
+  margin-bottom:22px;
+}
+.hero-eyebrow .pulse{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 0 0 rgba(107,175,141,.6);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(107,175,141,.6);}
+  70%{box-shadow:0 0 0 10px rgba(107,175,141,0);}
+  100%{box-shadow:0 0 0 0 rgba(107,175,141,0);}
+}
+.hero h1 span { color:var(--purple-700); font-style:italic; }
+.hero .sub {
+  font-size:1.1rem;
+  margin:20px 0 26px;
+  color:#4A3A6B;
+  max-width:540px;
+}
+
+.rating-row {
+  display:flex; align-items:center; gap:14px; margin-bottom:26px; flex-wrap:wrap;
+}
+.stars { color:#F5B400; font-size:1.05rem; letter-spacing:2px;}
+.rating-row .meta { font-size:.92rem; color:#5A4A7B; font-weight:500;}
+
+.hero-price {
+  display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.hero-price .now {
+  font-family:'Playfair Display', serif;
+  font-size:2.4rem; font-weight:800;
+  color:var(--purple-700);
+  line-height:1;
+}
+.hero-price .was {
+  font-size:1.1rem;
+  color:#9B85B8;
+  text-decoration:line-through;
+  font-weight:500;
+}
+.hero-price .off {
+  background:var(--gold);
+  color:var(--purple-900);
+  font-size:.72rem; font-weight:800; letter-spacing:1.5px;
+  padding:5px 12px; border-radius:50px;
+  text-transform:uppercase;
+}
+.hero-cta-row { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:24px;}
+
+.hero-trustpills {
+  display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;
+}
+.pill {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--white);
+  border:1px solid var(--purple-100);
+  padding:8px 14px; border-radius:50px;
+  font-size:.8rem; font-weight:600; color:var(--purple-800);
+  box-shadow:var(--shadow-soft);
+}
+.pill .tick { color:var(--green); font-weight:700; }
+
+/* Hero product visual */
+.hero-visual {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:520px;
+}
+.hero-blob {
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, var(--purple-300) 0%, var(--purple-100) 40%, transparent 70%);
+  filter:blur(40px);
+  opacity:.7;
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform:translateY(0) scale(1);}
+  50% { transform:translateY(-14px) scale(1.03);}
+}
+.hero-product {
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:480px;
+  aspect-ratio:1/1.05;
+  border-radius:32px;
+  background:linear-gradient(160deg, var(--purple-100) 0%, var(--white) 50%, var(--rose) 100%);
+  box-shadow:var(--shadow-strong);
+  overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-product img,
+.hero-product svg.product-svg {
+  width:88%;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 30px rgba(91,42,134,.35));
+}
+.solution-img svg.product-svg { width:88%; height:auto; filter:drop-shadow(0 18px 30px rgba(91,42,134,.3));}
+.g-tile svg.product-svg { position:absolute; inset:0; width:100%; height:100%; }
+.hero-badge {
+  position:absolute; top:18px; right:18px; z-index:3;
+  background:var(--purple-700); color:#fff;
+  width:90px; height:90px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  font-family:'Playfair Display', serif;
+  text-align:center; font-weight:700;
+  box-shadow:var(--shadow-strong);
+  transform:rotate(-12deg);
+}
+.hero-badge .big { font-size:1.6rem; line-height:1;}
+.hero-badge .small { font-size:.65rem; letter-spacing:2px; margin-top:4px; font-family:'Inter',sans-serif;}
+
+/* floating leaf chips */
+.float-chip{
+  position:absolute;
+  z-index:3;
+  background:#fff;
+  border-radius:14px;
+  padding:10px 14px;
+  box-shadow:var(--shadow-soft);
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--purple-800);
+  display:flex; align-items:center; gap:8px;
+}
+.float-chip .ico { width:24px;height:24px;border-radius:50%;background:var(--purple-50);display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.float-chip.fc1 { top:14%; left:-10px; animation:float 5s ease-in-out infinite;}
+.float-chip.fc2 { bottom:18%; right:-10px; animation:float 6s ease-in-out infinite reverse;}
+.float-chip.fc3 { bottom:5%; left:8%;  animation:float 7s ease-in-out infinite;}
+
+@media (max-width:900px){
+  .hero { padding:40px 0 60px;}
+  .hero-grid { grid-template-columns:1fr; gap:40px;}
+  .hero-visual { min-height:auto; order:-1;}
+  .hero-product { max-width:340px; }
+  .hero-badge { width:70px; height:70px;}
+  .hero-badge .big{ font-size:1.2rem;}
+}
+
+/* =========================================================
+   TRUST LOGOS BAR
+   ========================================================= */
+.trustbar {
+  background:var(--purple-900);
+  color:#fff;
+  padding:22px 0;
+}
+.trustbar-grid {
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:30px;
+}
+.trustbar-item {
+  display:flex; align-items:center; gap:10px;
+  font-size:.85rem; font-weight:600;
+  color:#fff; opacity:.95;
+}
+.trustbar-item .ico {
+  width:34px;height:34px;border-radius:50%;
+  background:var(--purple-700);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+}
+
+/* =========================================================
+   PRODUCT GALLERY
+   ========================================================= */
+.gallery { background:#fff; padding:80px 0; }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+}
+.g-tile {
+  position:relative;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:linear-gradient(160deg, var(--purple-100) 0%, var(--cream) 100%);
+  cursor:pointer;
+  transition:transform .35s ease, box-shadow .35s ease;
+  aspect-ratio:1 / 1;            /* uniform square tiles, no row clipping */
+  display:flex; flex-direction:column;
+}
+.g-tile:hover { transform:translateY(-4px); box-shadow:var(--shadow-strong); }
+.g-tile img {
+  width:100%; height:100%;
+  object-fit:contain;            /* show the full image, never crop */
+  object-position:center;
+  transition:transform .6s ease;
+  display:block;
+}
+.g-tile:hover img { transform:scale(1.04); }
+.g-tile .g-label {
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:40px 18px 14px;
+  background:linear-gradient(0deg, rgba(45,27,78,.92) 0%, rgba(45,27,78,0) 100%);
+  color:#fff;
+  font-family:'Inter', sans-serif;
+  font-weight:600;
+  font-size:.92rem;
+  letter-spacing:.3px;
+}
+.g-tile .g-tag {
+  position:absolute; top:14px; left:14px; z-index:2;
+  background:rgba(255,255,255,.92);
+  color:var(--purple-700);
+  font-size:.7rem; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:6px 12px; border-radius:50px;
+  backdrop-filter:blur(8px);
+}
+.g-tile.big {
+  grid-row:span 2;
+  grid-column:span 1;
+  aspect-ratio:auto;             /* big tile spans full height of two rows */
+}
+.g-tile.big .g-label { font-size:1.15rem; padding:60px 24px 22px;}
+
+@media (max-width:900px){
+  .gallery-grid { grid-template-columns:repeat(2, 1fr); gap:14px; }
+  .g-tile.big { grid-row:span 1; grid-column:span 2; aspect-ratio:16 / 10;}
+}
+@media (max-width:520px){
+  .gallery-grid { grid-template-columns:1fr; gap:12px; }
+  .g-tile { aspect-ratio:1 / 1; }
+  .g-tile.big { grid-column:span 1; aspect-ratio:1 / 1;}
+}
+
+/* =========================================================
+   SECTION GENERIC
+   ========================================================= */
+section { padding:90px 0; position:relative; }
+.section-eyebrow {
+  display:inline-block;
+  font-size:.78rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--purple-700);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.section-head {
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 56px;
+}
+.section-head p { margin-top:16px; font-size:1.05rem; }
+
+/* =========================================================
+   PROBLEM SECTION
+   ========================================================= */
+.problem {
+  background:linear-gradient(180deg, #fff 0%, var(--purple-50) 100%);
+}
+.problem-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+}
+.problem-card {
+  background:#fff;
+  border:1px solid var(--purple-100);
+  border-radius:var(--radius-md);
+  padding:28px 22px;
+  text-align:center;
+  transition:transform .3s ease;
+}
+.problem-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-soft); }
+.problem-card .emoji { font-size:2.3rem; margin-bottom:14px; }
+.problem-card h4 { font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; color:var(--purple-900); margin-bottom:6px;}
+.problem-card p { font-size:.88rem; }
+
+@media (max-width:768px){
+  .problem-grid { grid-template-columns:repeat(2,1fr);}
+}
+
+/* =========================================================
+   SOLUTION SPLIT
+   ========================================================= */
+.solution {
+  background:var(--cream);
+}
+.solution-grid {
+  display:grid; grid-template-columns:1fr 1.1fr; gap:60px; align-items:center;
+}
+.solution-img {
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio:1/1.05;
+  background:linear-gradient(135deg, var(--purple-100), var(--rose));
+  box-shadow:var(--shadow-strong);
+  display:flex;align-items:center;justify-content:center;
+}
+.solution-img img { width:80%; filter:drop-shadow(0 18px 30px rgba(91,42,134,.3)); }
+.solution-content h2 span { color:var(--purple-700); }
+.solution-content > p { font-size:1.05rem; margin:16px 0 26px;}
+.solution-features { display:flex; flex-direction:column; gap:16px; margin-bottom:30px;}
+.solution-features .item {
+  display:flex; align-items:flex-start; gap:14px;
+}
+.solution-features .check {
+  flex-shrink:0;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--purple-100);
+  color:var(--purple-700);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;
+}
+.solution-features .item h4 { font-family:'Inter',sans-serif; font-size:1rem; color:var(--purple-900); margin-bottom:2px;}
+.solution-features .item p { font-size:.92rem;}
+
+@media (max-width:900px){
+  .solution-grid { grid-template-columns:1fr; gap:40px;}
+}
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+.how { background:#fff; }
+.how-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:30px;
+  position:relative;
+}
+.how-line {
+  position:absolute;
+  top:80px; left:14%; right:14%;
+  height:2px;
+  background:repeating-linear-gradient(90deg, var(--purple-300) 0, var(--purple-300) 6px, transparent 6px, transparent 12px);
+  z-index:0;
+}
+.how-card {
+  background:var(--white);
+  border:1px solid var(--purple-100);
+  border-radius:var(--radius-md);
+  padding:34px 26px 28px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+  box-shadow:var(--shadow-soft);
+}
+.how-num {
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg, var(--purple-700), var(--purple-600));
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem; font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  box-shadow:0 10px 20px rgba(91,42,134,.3);
+}
+.how-card h3 { margin-bottom:10px; }
+.how-card p { font-size:.95rem; }
+
+@media (max-width:800px){
+  .how-grid { grid-template-columns:1fr;}
+  .how-line{ display:none;}
+}
+
+/* =========================================================
+   INGREDIENTS
+   ========================================================= */
+.ingredients {
+  background:linear-gradient(180deg, var(--purple-50) 0%, var(--cream) 100%);
+}
+.ing-grid {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+}
+.ing-card {
+  background:#fff;
+  border-radius:var(--radius-md);
+  padding:24px 18px;
+  text-align:center;
+  transition:transform .3s ease, box-shadow .3s ease;
+  border:1px solid var(--purple-100);
+}
+.ing-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-strong); }
+.ing-icon {
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg, var(--purple-100), var(--rose));
+  margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+}
+.ing-card h4 { font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:6px;}
+.ing-card p { font-size:.82rem; }
+
+@media (max-width:900px){
+  .ing-grid { grid-template-columns:repeat(2,1fr);}
+}
+
+/* =========================================================
+   BENEFITS GRID
+   ========================================================= */
+.benefits { background:#fff; }
+.benefit-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.benefit-card {
+  background:linear-gradient(160deg, #fff, var(--purple-50));
+  border:1px solid var(--purple-100);
+  border-radius:var(--radius-md);
+  padding:30px 24px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .25s ease;
+}
+.benefit-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-soft);}
+.benefit-card .bg-num {
+  position:absolute; top:-20px; right:-8px;
+  font-family:'Playfair Display',serif;
+  font-size:6rem; color:var(--purple-100);
+  font-weight:800; line-height:1;
+  user-select:none;
+}
+.benefit-card .ico {
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg, var(--purple-700), var(--purple-600));
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;
+  margin-bottom:18px;
+  box-shadow:0 8px 18px rgba(91,42,134,.3);
+}
+.benefit-card h3 { font-size:1.2rem; margin-bottom:8px; position:relative; z-index:1;}
+.benefit-card p { font-size:.92rem; position:relative; z-index:1;}
+
+@media (max-width:900px){
+  .benefit-grid { grid-template-columns:1fr; }
+}
+
+/* =========================================================
+   RESULTS TIMELINE
+   ========================================================= */
+.results {
+  background:linear-gradient(180deg, var(--purple-50) 0%, #fff 100%);
+}
+.timeline {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  position:relative;
+}
+.timeline::before{
+  content:'';
+  position:absolute; top:52px; left:8%; right:8%;
+  height:4px;
+  background:linear-gradient(90deg, var(--purple-300), var(--purple-700));
+  border-radius:8px;
+}
+.tl-card {
+  background:#fff;
+  border-radius:var(--radius-md);
+  padding:30px 20px 26px;
+  text-align:center;
+  border:1px solid var(--purple-100);
+  position:relative;
+  z-index:1;
+}
+.tl-dot {
+  width:24px;height:24px;border-radius:50%;
+  background:var(--purple-700);
+  border:5px solid #fff;
+  box-shadow:0 0 0 3px var(--purple-300);
+  margin:0 auto 22px;
+}
+.tl-card h4 {
+  font-family:'Playfair Display',serif; font-size:1.4rem;
+  color:var(--purple-700); margin-bottom:8px;
+}
+.tl-card .label { font-size:.78rem; letter-spacing:2px; text-transform:uppercase; color:var(--purple-500); font-weight:700; margin-bottom:12px;}
+.tl-card p { font-size:.88rem;}
+
+@media (max-width:900px){
+  .timeline { grid-template-columns:repeat(2,1fr);}
+  .timeline::before{ display:none;}
+}
+
+/* =========================================================
+   BEFORE / AFTER
+   ========================================================= */
+.beforeafter { background:#fff; }
+.ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.ba-card {
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio:1/1.05;
+  background:linear-gradient(135deg, var(--purple-100), var(--rose));
+  display:flex; align-items:flex-end;
+  box-shadow:var(--shadow-strong);
+}
+.ba-card .label {
+  position:absolute; top:18px; left:18px;
+  background:rgba(255,255,255,.92);
+  padding:8px 16px; border-radius:50px;
+  font-size:.78rem; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--purple-700);
+}
+.ba-card.after .label { background:var(--purple-700); color:#fff;}
+.ba-card .quote {
+  background:linear-gradient(0deg, rgba(0,0,0,.5), transparent);
+  color:#fff;
+  padding:50px 26px 26px;
+  width:100%;
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  font-style:italic;
+}
+
+@media (max-width:768px){
+  .ba-grid { grid-template-columns:1fr;}
+}
+
+/* =========================================================
+   COMPARISON TABLE
+   ========================================================= */
+.compare { background:linear-gradient(180deg, #fff, var(--purple-50));}
+.compare-wrap {
+  background:#fff;
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-soft);
+  border:1px solid var(--purple-100);
+  overflow:hidden;
+  position:relative;
+}
+.compare-table {
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  padding-top:14px;        /* room for the "Our Pick" ribbon */
+}
+.compare-table table {
+  width:100%;
+  min-width:720px;          /* keep readable; container scrolls if narrower */
+  border-collapse:collapse;
+}
+.compare-table th, .compare-table td {
+  padding:18px 14px; text-align:center; font-size:.92rem;
+  border-bottom:1px solid var(--purple-100);
+}
+.compare-table th {
+  background:var(--purple-50);
+  color:var(--purple-900);
+  font-weight:700; font-size:.95rem;
+  white-space:nowrap;
+}
+.compare-table th.us {
+  background:linear-gradient(135deg, var(--purple-700), var(--purple-600));
+  color:#fff;
+  position:relative;
+}
+.compare-table th.us::after {
+  content:'★ Our Pick';
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:var(--purple-900);
+  font-size:.7rem; font-weight:800; letter-spacing:1px;
+  padding:4px 10px; border-radius:50px;
+  white-space:nowrap;
+}
+.compare-table td:first-child { text-align:left; font-weight:600; color:var(--purple-900); white-space:nowrap;}
+.compare-table .yes { color:var(--green); font-size:1.2rem; font-weight:800;}
+.compare-table .no  { color:#c66; font-size:1.2rem; font-weight:800;}
+.compare-table td.us { background:var(--purple-50); font-weight:700; color:var(--purple-800);}
+
+/* subtle right-edge fade hint that more content can be scrolled to */
+.compare-wrap::after {
+  content:'';
+  position:absolute; top:0; right:0; bottom:0; width:24px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.85));
+  pointer-events:none;
+}
+
+@media (max-width:768px){
+  .compare-table th, .compare-table td { font-size:.82rem; padding:12px 10px;}
+}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+.testimonials { background:#fff;}
+.test-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.test-card {
+  background:linear-gradient(160deg, var(--cream), #fff);
+  border:1px solid var(--purple-100);
+  border-radius:var(--radius-md);
+  padding:30px 26px;
+  position:relative;
+}
+.test-card .quote-mark {
+  position:absolute; top:10px; right:18px;
+  font-family:'Playfair Display',serif;
+  font-size:5rem; color:var(--purple-100); line-height:1;
+}
+.test-card .stars { margin-bottom:14px;}
+.test-card .body { font-size:.95rem; color:#3D2B5E; margin-bottom:22px; font-style:italic;}
+.test-card .author { display:flex; align-items:center; gap:12px;}
+.test-card .avatar {
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg, var(--purple-300), var(--rose));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;
+}
+.test-card .author-info strong { display:block; font-size:.95rem; color:var(--purple-900);}
+.test-card .author-info span { font-size:.8rem; color:var(--purple-500);}
+
+@media (max-width:900px){
+  .test-grid { grid-template-columns:1fr;}
+}
+
+/* =========================================================
+   UGC GRID
+   ========================================================= */
+.ugc { background:var(--purple-50);}
+.ugc-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.ugc-card {
+  aspect-ratio:9/14;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:linear-gradient(160deg, var(--purple-100), var(--rose));
+  position:relative;
+  cursor:pointer;
+  transition:transform .25s ease;
+  display:flex; align-items:flex-end; justify-content:flex-start;
+}
+.ugc-card:hover { transform:scale(1.03);}
+.ugc-card .play {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:54px;height:54px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem; color:var(--purple-700);
+  box-shadow:var(--shadow-soft);
+}
+.ugc-card .label {
+  position:relative; z-index:2;
+  background:linear-gradient(0deg, rgba(0,0,0,.55), transparent);
+  width:100%; padding:30px 14px 14px;
+  color:#fff; font-size:.8rem; font-weight:600;
+}
+
+@media (max-width:800px){
+  .ugc-grid { grid-template-columns:repeat(2,1fr);}
+}
+
+/* =========================================================
+   PRICING / BUNDLES
+   ========================================================= */
+.pricing { background:linear-gradient(180deg, #fff, var(--purple-50));}
+.price-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  align-items:stretch;
+}
+.price-card {
+  background:#fff;
+  border:2px solid var(--purple-100);
+  border-radius:var(--radius-md);
+  padding:34px 26px 30px;
+  position:relative;
+  text-align:center;
+  display:flex; flex-direction:column;
+  transition:transform .25s ease;
+}
+.price-card:hover { transform:translateY(-4px);}
+.price-card.popular {
+  border-color:var(--purple-700);
+  background:linear-gradient(180deg, var(--purple-700), var(--purple-600));
+  color:#fff;
+  transform:scale(1.04);
+  box-shadow:var(--shadow-strong);
+}
+.price-card.popular h3,
+.price-card.popular .price,
+.price-card.popular .features li { color:#fff;}
+.price-card.popular .features li::before { background:rgba(255,255,255,.25); color:#fff;}
+.price-card.popular .desc { color:rgba(255,255,255,.85);}
+.price-card.popular .strike { color:rgba(255,255,255,.6);}
+.price-card .ribbon {
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:var(--gold);
+  color:var(--purple-900);
+  padding:6px 16px; border-radius:50px;
+  font-size:.72rem; font-weight:800; letter-spacing:1.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.price-card h3 { font-size:1.4rem; margin-bottom:6px;}
+.price-card .desc { font-size:.88rem; color:#5A4A7B; margin-bottom:22px;}
+.price-card .price {
+  font-family:'Playfair Display', serif;
+  font-size:2.6rem; font-weight:800;
+  color:var(--purple-700);
+  line-height:1;
+}
+.price-card .strike { font-size:1rem; color:#9B85B8; text-decoration:line-through; margin-left:6px; font-weight:400;}
+.price-card .per { font-size:.85rem; color:#5A4A7B; margin-top:6px; margin-bottom:22px;}
+.price-card .features { list-style:none; text-align:left; margin-bottom:28px;}
+.price-card .features li {
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:.9rem; padding:8px 0;
+  color:var(--purple-900);
+}
+.price-card .features li::before {
+  content:'✓';
+  flex-shrink:0;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--purple-100);
+  color:var(--purple-700);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem; font-weight:800;
+  margin-top:2px;
+}
+.price-card .btn { width:100%; margin-top:auto;}
+.price-card.popular .btn {
+  background:#fff; color:var(--purple-700) !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.2);
+}
+
+@media (max-width:900px){
+  .price-grid { grid-template-columns:1fr; }
+  .price-card.popular { transform:none;}
+}
+
+/* =========================================================
+   GUARANTEE
+   ========================================================= */
+.guarantee {
+  background:linear-gradient(135deg, var(--purple-900), var(--purple-700));
+  color:#fff;
+  text-align:center;
+  padding:70px 0;
+}
+.guarantee h2 { color:#fff; margin-bottom:14px;}
+.guarantee p { color:rgba(255,255,255,.85); max-width:600px; margin:0 auto;}
+.guarantee .seal {
+  width:100px;height:100px;border-radius:50%;
+  background:var(--gold);
+  color:var(--purple-900);
+  font-family:'Playfair Display',serif; font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  margin:0 auto 24px;
+  text-align:center;
+  box-shadow:0 14px 30px rgba(0,0,0,.25);
+}
+.guarantee .seal .big { font-size:1.6rem; line-height:1;}
+.guarantee .seal .small { font-size:.6rem; letter-spacing:1.5px; margin-top:4px; font-family:'Inter',sans-serif;}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq { background:#fff;}
+.faq-list { max-width:780px; margin:0 auto;}
+.faq-item {
+  border:1px solid var(--purple-100);
+  border-radius:var(--radius-sm);
+  margin-bottom:14px;
+  overflow:hidden;
+  transition:box-shadow .25s ease;
+}
+.faq-item[open] { box-shadow:var(--shadow-soft); border-color:var(--purple-300);}
+.faq-item summary {
+  list-style:none;
+  cursor:pointer;
+  padding:22px 26px;
+  font-weight:600;
+  font-size:1rem;
+  color:var(--purple-900);
+  display:flex; justify-content:space-between; align-items:center;
+  gap:20px;
+}
+.faq-item summary::-webkit-details-marker { display:none;}
+.faq-item summary::after {
+  content:'+';
+  font-size:1.6rem; line-height:1;
+  color:var(--purple-700); font-weight:300;
+  transition:transform .25s ease;
+}
+.faq-item[open] summary::after { content:'−';}
+.faq-item .answer {
+  padding:0 26px 24px;
+  font-size:.95rem;
+  color:#4A3A6B;
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+.final-cta {
+  background:
+    radial-gradient(circle at 80% 20%, var(--rose) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, var(--purple-100) 0%, transparent 40%),
+    linear-gradient(180deg, var(--cream), #fff);
+  text-align:center;
+  padding:100px 0;
+}
+.final-cta h2 { font-size:clamp(2rem, 5vw, 3.4rem); margin-bottom:16px;}
+.final-cta h2 span { color:var(--purple-700); font-style:italic;}
+.final-cta p { font-size:1.1rem; max-width:580px; margin:0 auto 30px; }
+
+.countdown {
+  display:inline-flex;
+  gap:10px;
+  margin:0 auto 30px;
+  background:#fff;
+  padding:14px 22px;
+  border-radius:50px;
+  box-shadow:var(--shadow-soft);
+  border:1px solid var(--purple-100);
+}
+.countdown .unit {
+  text-align:center; min-width:46px;
+}
+.countdown .num {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; font-weight:700;
+  color:var(--purple-700);
+  line-height:1;
+}
+.countdown .lbl {
+  font-size:.65rem; letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--purple-500);
+  margin-top:4px;
+}
+.countdown .sep { color:var(--purple-300); font-weight:700; align-self:center;}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background:var(--purple-900);
+  color:rgba(255,255,255,.85);
+  padding:50px 0 30px;
+  text-align:center;
+}
+.footer .logo { color:#fff;}
+.footer .logo small { color:rgba(255,255,255,.6);}
+.footer-links { margin:20px 0; font-size:.9rem; display:flex; flex-wrap:wrap; justify-content:center; gap:24px;}
+.footer-links a:hover { color:var(--gold);}
+.footer .small { font-size:.78rem; opacity:.6; padding-bottom:80px; }
+
+/* =========================================================
+   STICKY MOBILE BUY BAR
+   ========================================================= */
+.sticky-buy {
+  display:none;
+  position:fixed; bottom:0; left:0; right:0; z-index:60;
+  background:#fff; border-top:1px solid var(--purple-100);
+  padding:12px 16px;
+  align-items:center; justify-content:space-between; gap:12px;
+  box-shadow:0 -10px 30px rgba(91,42,134,.18);
+}
+.sticky-buy .pp { display:flex; flex-direction:column;}
+.sticky-buy .pp .name { font-size:.85rem; font-weight:700; color:var(--purple-900);}
+.sticky-buy .pp .pr { font-size:.95rem; font-weight:700; color:var(--purple-700);}
+.sticky-buy .pp .strike { font-size:.82rem; color:#9B85B8; text-decoration:line-through; font-weight:500;}
+.sticky-buy .btn { flex-shrink:0; padding:14px 22px; font-size:.85rem;}
+
+@media (max-width:768px){
+  .sticky-buy { display:flex;}
+  body { padding-bottom:80px;}
+}
+
+/* =========================================================
+   ANIMATIONS / UTIL
+   ========================================================= */
+.fade-up { opacity:0; transform:translateY(24px); transition:all .8s ease;}
+.fade-up.in { opacity:1; transform:translateY(0);}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Announcement Bar ===== -->
+<div class="announce">
+  <div class="announce-track">
+    <span><span class="dot">●</span> FREE SHIPPING ON ORDERS ABOVE ₹500</span>
+    <span><span class="dot">●</span> 10,000+ HAPPY CUSTOMERS</span>
+    <span><span class="dot">●</span> GET 10% OFF YOUR FIRST ORDER · CODE: GLOW10</span>
+    <span><span class="dot">●</span> COD AVAILABLE PAN INDIA</span>
+    <span><span class="dot">●</span> FREE GIFT ON ORDERS ABOVE ₹1000</span>
+    <!-- repeat for seamless scroll -->
+    <span><span class="dot">●</span> FREE SHIPPING ON ORDERS ABOVE ₹500</span>
+    <span><span class="dot">●</span> 10,000+ HAPPY CUSTOMERS</span>
+    <span><span class="dot">●</span> GET 10% OFF YOUR FIRST ORDER · CODE: GLOW10</span>
+    <span><span class="dot">●</span> COD AVAILABLE PAN INDIA</span>
+    <span><span class="dot">●</span> FREE GIFT ON ORDERS ABOVE ₹1000</span>
+  </div>
+</div>
+
+<!-- ===== Nav ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">True Nirvana<small>HERBAL WELLNESS</small></a>
+    <div class="nav-links">
+      <a href="#benefits">Benefits</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn">Buy Now ₹399</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="pulse"></span>New batch · Just brewed</span>
+      <h1>Sip Your Way to<br/><span>Radiant, Glowing Skin</span><br/>in Just 14 Days.</h1>
+      <p class="sub">A 100% natural herbal infusion of hibiscus, rose, butterfly pea & moringa, clinically-loved botanicals that target dull skin, breakouts and dark spots from the <strong>inside out</strong>.</p>
+
+      <div class="rating-row">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="meta">4.8/5 · 2,300+ verified reviews</div>
+      </div>
+
+      <div class="hero-price">
+        <span class="now">₹399</span>
+        <span class="was">₹549</span>
+        <span class="off">Save 27%</span>
+      </div>
+
+      <div class="hero-cta-row">
+        <a href="#" class="btn btn-lg">Buy Now</a>
+        <a href="#" class="btn btn-outline">Add To Cart</a>
+      </div>
+
+      <div class="hero-trustpills">
+        <span class="pill"><span class="tick">✓</span> 100% Natural</span>
+        <span class="pill"><span class="tick">✓</span> Caffeine-Free</span>
+        <span class="pill"><span class="tick">✓</span> No Added Sugar</span>
+        <span class="pill"><span class="tick">✓</span> FSSAI Certified</span>
+        <span class="pill"><span class="tick">✓</span> Vegan</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+
+      <div class="float-chip fc1"><div class="ico">🌺</div> Hibiscus + Rose</div>
+      <div class="float-chip fc2"><div class="ico">✨</div> Visible glow in 14 days</div>
+      <div class="float-chip fc3"><div class="ico">🌿</div> Caffeine-free blend</div>
+
+      <div class="hero-product">
+        <div class="hero-badge">
+          <span class="big">27%</span>
+          <span class="small">OFF</span>
+        </div>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7491.jpg?v=1762160331&width=900" alt="True Nirvana Skin Glow Tea, purple pack">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Trust Bar ===== -->
+<section class="trustbar" style="padding:22px 0;">
+  <div class="container trustbar-grid">
+    <div class="trustbar-item"><div class="ico">🌿</div> 100% Herbal</div>
+    <div class="trustbar-item"><div class="ico">🌾</div> Gluten Free</div>
+    <div class="trustbar-item"><div class="ico">✅</div> FSSAI Certified</div>
+    <div class="trustbar-item"><div class="ico">🥬</div> Vegan & Plant-Based</div>
+    <div class="trustbar-item"><div class="ico">🏆</div> 10,000+ Happy Customers</div>
+    <div class="trustbar-item"><div class="ico">🚚</div> Free Shipping</div>
+  </div>
+</section>
+
+<!-- ===== Product Gallery (6 images) =====
+     DEV NOTE: swap each <img src=""> below with the actual product/lifestyle photo.
+     Image 1 is sourced from the existing Shopify CDN; the others are placeholder
+     URLs following the same pattern, replace with the real assets the brand uses. -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">See it from every angle</span>
+      <h2>The pack, the ritual, the glow.</h2>
+      <p>Click through to see the ingredients, packaging, brewing ritual and what makes Skin Glow Tea different.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Hero/Big tile -->
+      <div class="g-tile big">
+        <span class="g-tag">Hero</span>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7491.jpg?v=1762160331&width=900" alt="Herbal Skin Glow Tea, 100g">
+        <div class="g-label">Herbal Skin Glow Tea, 100g</div>
+      </div>
+
+      <!-- 21 Days transformation -->
+      <div class="g-tile">
+        <span class="g-tag">Results</span>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7482.jpg?v=1762160370&width=600" alt="21 days to glowing skin">
+        <div class="g-label">21 Days to Glowing Skin</div>
+      </div>
+
+      <!-- Ingredients spotlight -->
+      <div class="g-tile">
+        <span class="g-tag">Inside</span>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7452.jpg?v=1762160409&width=600" alt="Whole-flower botanicals">
+        <div class="g-label">Whole-flower botanicals</div>
+      </div>
+
+      <!-- What's Inside -->
+      <div class="g-tile">
+        <span class="g-tag">Label</span>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7449.jpg?v=1762160386&width=600" alt="What's inside Skin Glow Tea">
+        <div class="g-label">What's Inside</div>
+      </div>
+
+      <!-- How to Brew -->
+      <div class="g-tile">
+        <span class="g-tag">How-to</span>
+        <img src="https://truenirvana.in/cdn/shop/files/IMG_7451_1.jpg?v=1762161696&width=600" alt="How to brew the perfect cup">
+        <div class="g-label">How to Brew the Perfect Cup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Problem ===== -->
+<section class="problem">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">The struggle is real</span>
+      <h2>Skincare products alone aren't fixing it.</h2>
+      <p>87% of skin issues start <em>inside</em> the body, gut imbalance, dehydration, oxidative stress. Topicals just mask them. Sound familiar?</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="emoji">😩</div>
+        <h4>Dull, Tired Skin</h4>
+        <p>No glow no matter how many serums you layer.</p>
+      </div>
+      <div class="problem-card">
+        <div class="emoji">🔴</div>
+        <h4>Stubborn Breakouts</h4>
+        <p>Cystic acne, hormonal flare-ups, congestion.</p>
+      </div>
+      <div class="problem-card">
+        <div class="emoji">🌑</div>
+        <h4>Dark Spots & Pigmentation</h4>
+        <p>Uneven tone, scars and melasma that won't fade.</p>
+      </div>
+      <div class="problem-card">
+        <div class="emoji">⏳</div>
+        <h4>Early Fine Lines</h4>
+        <p>Skin losing bounce, firmness and that youthful glow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Solution ===== -->
+<section class="solution">
+  <div class="container solution-grid">
+    <div class="solution-img">
+      <img src="https://truenirvana.in/cdn/shop/files/IMG_7491.jpg?v=1762160331&width=900" alt="Skin Glow Tea pack">
+    </div>
+    <div class="solution-content">
+      <span class="section-eyebrow">The True Nirvana Way</span>
+      <h2>Meet your daily <span>Inside-Out Glow Ritual.</span></h2>
+      <p>Skin Glow Tea is an Ayurveda-inspired blend of 7 dermatologist-loved botanicals, formulated to detoxify, hydrate and nourish your skin from within. One warm cup. Zero compromise.</p>
+
+      <div class="solution-features">
+        <div class="item">
+          <div class="check">✓</div>
+          <div>
+            <h4>Clinically-loved botanicals</h4>
+            <p>Hibiscus, butterfly pea, moringa, rose & more, chosen for their proven skin benefits.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="check">✓</div>
+          <div>
+            <h4>Zero caffeine, zero crash</h4>
+            <p>Safe to sip morning, noon or before bed. Hydrating, not dehydrating.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="check">✓</div>
+          <div>
+            <h4>Loose-leaf, full-spectrum</h4>
+            <p>Whole flowers and leaves, not the dust bagged teas use. Maximum antioxidants per sip.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="check">✓</div>
+          <div>
+            <h4>50 cups per pack</h4>
+            <p>Less than ₹8 per cup. Costs less than your daily latte.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-lg">Get My Glow Pack →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== How it works ===== -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">3 simple steps</span>
+      <h2>Glow in less than 5 minutes a day.</h2>
+      <p>No pills. No sticky serums. Just a calm, ritualistic cup of tea, and skin that thanks you for it.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-line"></div>
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h3>Steep</h3>
+        <p>Add 1 tsp of Skin Glow Tea to hot water. Let it bloom for 4-5 minutes and watch the deep purple-rose hue unfold.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h3>Sip</h3>
+        <p>Enjoy one warm cup daily, morning, post-lunch, or as your evening wind-down ritual. Caffeine-free, anytime.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h3>See the Glow</h3>
+        <p>Within 14 days, see clearer, plumper, more luminous skin. By day 28, complexion feels reborn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ingredients ===== -->
+<section class="ingredients" id="ingredients">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">What's inside</span>
+      <h2>7 botanicals. Zero compromises.</h2>
+      <p>Each ingredient was selected for a single reason, visible skin transformation. No fillers, no flavours, no nonsense.</p>
+    </div>
+
+    <div class="ing-grid">
+      <div class="ing-card">
+        <div class="ing-icon">🌺</div>
+        <h4>Hibiscus</h4>
+        <p>"Botox plant", boosts collagen, fades pigmentation.</p>
+      </div>
+      <div class="ing-card">
+        <div class="ing-icon">🌸</div>
+        <h4>Rose Petals</h4>
+        <p>Hydrates skin & soothes inflammation from within.</p>
+      </div>
+      <div class="ing-card">
+        <div class="ing-icon">🦋</div>
+        <h4>Butterfly Pea</h4>
+        <p>Antioxidant-rich; reduces oxidative stress & dullness.</p>
+      </div>
+      <div class="ing-card">
+        <div class="ing-icon">🌿</div>
+        <h4>Moringa</h4>
+        <p>Detoxifies blood, fights acne-causing toxins.</p>
+      </div>
+      <div class="ing-card">
+        <div class="ing-icon">🌼</div>
+        <h4>Chamomile</h4>
+        <p>Calms skin, reduces redness, balances hormones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Benefits Grid ===== -->
+<section class="benefits" id="benefits">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Why you'll love it</span>
+      <h2>6 reasons your skin will thank you.</h2>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <span class="bg-num">01</span>
+        <div class="ico">✨</div>
+        <h3>Visible Glow</h3>
+        <p>Antioxidants flush out free radicals, restoring the natural radiance dull skin has been begging for.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="bg-num">02</span>
+        <div class="ico">🌿</div>
+        <h3>Clears Acne</h3>
+        <p>Moringa + chamomile target acne-causing toxins, calm inflammation and balance breakout-prone skin.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="bg-num">03</span>
+        <div class="ico">⏳</div>
+        <h3>Anti-Aging</h3>
+        <p>Hibiscus, nature's botox, stimulates collagen, softening fine lines and improving firmness.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="bg-num">04</span>
+        <div class="ico">💧</div>
+        <h3>Deep Hydration</h3>
+        <p>Rose petals deliver inside-out hydration. Bye-bye flaky patches and tight, parched skin.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="bg-num">05</span>
+        <div class="ico">🧬</div>
+        <h3>Evens Skin Tone</h3>
+        <p>Vitamin C-rich botanicals fade pigmentation, dark spots and post-acne marks over time.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="bg-num">06</span>
+        <div class="ico">🍃</div>
+        <h3>Gentle Detox</h3>
+        <p>Supports liver & gut, the real source of stubborn breakouts and lacklustre complexion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Timeline of Results ===== -->
+<section class="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Real results, real fast</span>
+      <h2>Your 8-week glow journey.</h2>
+      <p>What thousands of customers see when they make Skin Glow Tea a daily ritual.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-card">
+        <div class="tl-dot"></div>
+        <div class="label">Week 1</div>
+        <h4>Hydrated</h4>
+        <p>Skin feels plumper, softer to touch. Morning puffiness reduces.</p>
+      </div>
+      <div class="tl-card">
+        <div class="tl-dot"></div>
+        <div class="label">Week 2</div>
+        <h4>Clearer</h4>
+        <p>Active breakouts calm down. Skin tone looks brighter & more even.</p>
+      </div>
+      <div class="tl-card">
+        <div class="tl-dot"></div>
+        <div class="label">Week 4</div>
+        <h4>Glowing</h4>
+        <p>Visible radiance. Dark spots start to fade. Texture refines.</p>
+      </div>
+      <div class="tl-card">
+        <div class="tl-dot"></div>
+        <div class="label">Week 8</div>
+        <h4>Transformed</h4>
+        <p>Firmer, luminous skin. Compliments incoming. Confidence: off the charts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Before / After ===== -->
+<section class="beforeafter">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Real transformations</span>
+      <h2>14 days. One cup a day. See the difference.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <span class="label">Before</span>
+        <div class="quote">"My skin felt dull, congested and tired all the time."</div>
+      </div>
+      <div class="ba-card after">
+        <span class="label">After 14 Days</span>
+        <div class="quote">"My friends keep asking what facial I got. I just smile and sip my tea." (Priya, 28)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Comparison Table ===== -->
+<section class="compare">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Why Skin Glow Tea</span>
+      <h2>How we compare to the rest.</h2>
+    </div>
+
+    <div class="compare-wrap">
+      <div class="compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th class="us">Skin Glow Tea</th>
+            <th>Skin Pills</th>
+            <th>Topical Creams</th>
+            <th>Regular Tea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100% Natural Herbs</td>
+            <td class="us"><span class="yes">✓</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Caffeine-Free</td>
+            <td class="us"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td>N/A</td>
+            <td><span class="no">✕</span></td>
+          </tr>
+          <tr>
+            <td>Targets root cause</td>
+            <td class="us"><span class="yes">✓</span></td>
+            <td><span class="yes">✓</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+          </tr>
+          <tr>
+            <td>No Synthetic Additives</td>
+            <td class="us"><span class="yes">✓</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Hydrating Ritual</td>
+            <td class="us"><span class="yes">✓</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+            <td><span class="no">✕</span></td>
+          </tr>
+          <tr>
+            <td>Cost per day</td>
+            <td class="us">₹8</td>
+            <td>₹25+</td>
+            <td>₹40+</td>
+            <td>₹3</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">2,300+ five-star reviews</span>
+      <h2>What our glow gang says.</h2>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="body">"My hormonal acne finally calmed down after years of trying everything. I genuinely look forward to my evening cup. Best ₹399 I've spent."</p>
+        <div class="author">
+          <div class="avatar">A</div>
+          <div class="author-info">
+            <strong>Aanya M.</strong>
+            <span>Verified Buyer · Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="body">"By week 3, my dark spots started fading and my skin felt baby-soft. The taste is delicate and floral, not bitter at all."</p>
+        <div class="author">
+          <div class="avatar">R</div>
+          <div class="author-info">
+            <strong>Rhea S.</strong>
+            <span>Verified Buyer · Bangalore</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="body">"I bought the 3-pack as a gift for my mum and ended up reordering for myself. My makeup sits SO much better now. Total game changer."</p>
+        <div class="author">
+          <div class="avatar">N</div>
+          <div class="author-info">
+            <strong>Nikita P.</strong>
+            <span>Verified Buyer · Delhi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== UGC Grid ===== -->
+<section class="ugc">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">#TrueNirvanaGlow</span>
+      <h2>Trending on Instagram &amp; TikTok.</h2>
+    </div>
+
+    <div class="ugc-grid">
+      <div class="ugc-card"><div class="play">▶</div><div class="label">@simrankaur · 14-day glow up</div></div>
+      <div class="ugc-card"><div class="play">▶</div><div class="label">@theskindiary · honest review</div></div>
+      <div class="ugc-card"><div class="play">▶</div><div class="label">@anushka.wellness · my AM ritual</div></div>
+      <div class="ugc-card"><div class="play">▶</div><div class="label">@dr.meher · derm's verdict</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Common questions</span>
+      <h2>Everything you wanted to ask.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>How long until I see results?</summary>
+        <div class="answer">Most customers report visibly hydrated, plumper skin within 7-10 days. Brighter tone and reduced breakouts typically show by week 2. For pigmentation, fine lines and deep glow, give it the full 8 weeks for best results.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do I brew Skin Glow Tea?</summary>
+        <div class="answer">Add 1 teaspoon (≈2g) of the loose-leaf blend to a cup of freshly boiled water (90°C). Steep for 4-5 minutes, strain and enjoy warm. You can add a drop of honey or a squeeze of lemon to taste. Drink 1 cup daily.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is it safe to drink every day?</summary>
+        <div class="answer">Absolutely. The blend is 100% natural, caffeine-free and free of additives, designed for daily, long-term use. Pregnant or breastfeeding women and those on prescribed medication should consult a doctor first.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will it interfere with my skincare routine?</summary>
+        <div class="answer">No, it works <em>with</em> your topicals, not against them. Think of Skin Glow Tea as the missing inside-out step. Many customers report their existing skincare actually performs better once their skin is properly nourished from within.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What does it taste like?</summary>
+        <div class="answer">Delicate, floral and naturally rose-purple in colour. Mildly tart from the hibiscus, soft sweetness from the rose. Most first-time herbal tea drinkers love it, no bitter aftertaste.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you ship pan India?</summary>
+        <div class="answer">Yes! Free shipping on orders above ₹500. We deliver pan India in 3-6 working days. COD available across most pincodes. Track your order from your dashboard or via WhatsApp.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I don't see results?</summary>
+        <div class="answer">You're protected by our 30-day glow guarantee. If you're not delighted, write to support@truenirvana.in within 30 days and we'll refund you in full, even on opened packs.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Final CTA ===== -->
+<section class="final-cta">
+  <div class="container">
+    <span class="section-eyebrow">Limited launch offer</span>
+    <h2>Your glow is <span>14 days</span> away.</h2>
+    <p>Join 10,000+ women who've made Skin Glow Tea their daily ritual. Stock is limited this month, claim yours while sale prices last.</p>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="cdH">12</div><div class="lbl">Hrs</div></div>
+      <div class="sep">:</div>
+      <div class="unit"><div class="num" id="cdM">34</div><div class="lbl">Min</div></div>
+      <div class="sep">:</div>
+      <div class="unit"><div class="num" id="cdS">56</div><div class="lbl">Sec</div></div>
+    </div>
+
+    <div>
+      <a href="#" class="btn btn-lg">Yes, I Want to Glow →</a>
+    </div>
+    <p style="font-size:.85rem; margin-top:18px;">★★★★★ Trusted by 10,000+ · 30-Day Money-Back · Free Shipping ₹500+</p>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="logo">True Nirvana<small>HERBAL WELLNESS</small></div>
+    <div class="footer-links">
+      <a href="https://truenirvana.in/policies/privacy-policy">Privacy Policy</a>
+      <a href="https://truenirvana.in/policies/refund-policy">Refund Policy</a>
+      <a href="https://truenirvana.in/policies/shipping-policy">Shipping Policy</a>
+      <a href="https://truenirvana.in/policies/terms-of-service">Terms</a>
+      <a href="https://truenirvana.in/pages/contact">Contact</a>
+    </div>
+    <div class="small">© 2026 True Nirvana · Made with 🌿 in Bengaluru · support@truenirvana.in · +91 80501 59830</div>
+  </div>
+</footer>
+
+<!-- ===== Sticky Mobile Buy Bar ===== -->
+<div class="sticky-buy">
+  <div class="pp">
+    <div class="name">Skin Glow Tea 100g</div>
+    <div><span class="pr">₹399</span> <span class="strike">₹549</span></div>
+  </div>
+  <a href="#" class="btn">Buy Now →</a>
+</div>
+
+<script>
+/* ===== Countdown Timer ===== */
+(function(){
+  // 11h 59m 59s from page load
+  let total = 11*3600 + 59*60 + 59;
+  const h = document.getElementById('cdH');
+  const m = document.getElementById('cdM');
+  const s = document.getElementById('cdS');
+  function tick(){
+    if(total<=0){ total = 11*3600 + 59*60 + 59;}
+    const hh = Math.floor(total/3600);
+    const mm = Math.floor((total%3600)/60);
+    const ss = total%60;
+    h.textContent = String(hh).padStart(2,'0');
+    m.textContent = String(mm).padStart(2,'0');
+    s.textContent = String(ss).padStart(2,'0');
+    total--;
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ===== Fade-in on scroll ===== */
+(function(){
+  const els = document.querySelectorAll('section, .hero-grid, .price-card, .test-card, .ing-card, .benefit-card, .tl-card');
+  els.forEach(el => el.classList.add('fade-up'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  els.forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>
